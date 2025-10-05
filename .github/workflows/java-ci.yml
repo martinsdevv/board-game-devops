@@ -9,6 +9,9 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: boardgame
 
     steps:
       # 1. Baixa o código do repositório para a máquina virtual
@@ -31,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: boardgame-library-jar
-          path: target/*.jar
+          path: boardgame/target/*.jar
